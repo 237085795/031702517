@@ -16,6 +16,9 @@ public:
 	string county;//œÿ
 	string town;//’Ú
 	string detailedaddress;//œÍœ∏µÿ÷∑
+	string da1;
+	string da2;
+	string da3;
 	string level;
 	//void Input();
 	void Output();
@@ -23,6 +26,7 @@ public:
 	void GetName();
 	void GetPhone();
 	void FiveDivision();
+	void SevenDivision();
 	void Solution();
 };
 
