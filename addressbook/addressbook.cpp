@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include"information.h"
 #include <iostream>
 #include<fstream>
@@ -15,6 +15,7 @@ int main()
 	file1.open("1.txt");
 	while (getline(file1, line)) {
 		word.push_back(line);
+		
 	}
 	file1.close();
 	ofstream file2;

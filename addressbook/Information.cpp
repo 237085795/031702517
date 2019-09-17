@@ -82,13 +82,22 @@ void Information::FiveDivision()
 	county = sm[3];
 	town = sm[4];
 	detailedaddress = sm[5];
+	if (city == "北京市")
+		province = "北京";
+	if (city == "天津市")
+		province = "天津";
+	if (city == "上海市")
+		province = "上海";
+	if (city == "重庆市")
+		province = "重庆";
+
 }
 
 void Information::SevenDivision()
 {
-	{
+
 		s.pop_back();
-		regex exp("([^省]+自治区|.*?省|.*?行政区)?([^市]+自治州|.*?地区|.*?行政单位|.+盟|市辖区|.*?市|.*?县)?([^县]+县|.+?区|.+市|.+旗|.+海域|.+岛)?([^区]+区|.+?镇|.+?街道|.+?乡)?(.+?街|.+?路|.+?巷)?([\d]+?号|[\d]+.?道)?(.*)");
+		regex exp("([^省]+自治区|.*?省|.*?行政区)?([^市]+自治州|.*?地区|.*?行政单位|.+盟|市辖区|.*?市|.*?县)?([^县]+县|.+?区|.+市|.+旗|.+海域|.+岛)?([^区]+?区|.+?镇|.+?街道|.+?乡)?(.+?街|.+?路|.+?巷)?([\\d]+?号|[\\d]+.?道)?(.*)");
 		smatch sm;
 		regex_search(s, sm, exp);
 		province = sm[1];
@@ -98,7 +107,15 @@ void Information::SevenDivision()
 		da1 = sm[5];
 		da2 = sm[6];
 		da3 = sm[7];
-	}
+	
+	if (city == "北京市")
+		province = "北京";
+	if (city == "天津市")
+		province = "天津";
+	if (city == "上海市")
+		province = "上海";
+	if (city == "重庆市")
+		province = "重庆";
 }
 
 void Information::Solution()
