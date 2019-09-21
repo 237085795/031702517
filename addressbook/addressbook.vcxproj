@@ -153,9 +153,10 @@
   <ItemGroup>
     <ClInclude Include="Information.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Transcode.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="addressbook.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Information.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -163,10 +164,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Transcode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1.txt" />
     <Text Include="2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

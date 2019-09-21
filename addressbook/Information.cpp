@@ -4,6 +4,7 @@
 #include<regex>
 #include<string>
 #include<fstream>
+#include"Transcode.h"
 
 using namespace std;
 
@@ -20,23 +21,43 @@ Information::~Information()
 //	cin >> s;
 //}
 
+//void Information::Output()
+//{
+//	if (level == "1") {
+//		ofstream file2;
+//		file2.open("2.txt", ios::app);
+//		file2 << "{\"姓名\":\"" << name << "\",\"手机\":\"" << phone << "\",\"地址\":[\"" << province << "\",\"" << city << "\",\"" << county << "\",\"" << town << "\",\"" << detailedaddress << "\"]}";
+//		file2.close();
+//	}
+//	/*if (level == "2") */
+//	else{
+//		ofstream file2;
+//		file2.open("2.txt", ios::app);
+//		file2 << "{\"姓名\":\"" << name << "\",\"手机\":\"" << phone << "\",\"地址\":[\"" << province << "\",\"" << city << "\",\"" << county << "\",\"" << town << "\",\"" << da1<< "\",\""  << da2 << "\",\"" << da3 << "\"]}";
+//		file2.close();
+//	}
+//
+//}//GB2312
 void Information::Output()
 {
+	Transcode way;
+	string json;
 	if (level == "1") {
 		ofstream file2;
 		file2.open("2.txt", ios::app);
-		file2 << "{\"姓名\":\"" << name << "\",\"手机\":\"" << phone << "\",\"地址\":[\"" << province << "\",\"" << city << "\",\"" << county << "\",\"" << town << "\",\"" << detailedaddress << "\"]}";
+		json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + detailedaddress + "\"]}";
+		file2 << way.G2U(json.c_str());	
 		file2.close();
 	}
 	/*if (level == "2") */
-	else{
+	else {
 		ofstream file2;
 		file2.open("2.txt", ios::app);
-		file2 << "{\"姓名\":\"" << name << "\",\"手机\":\"" << phone << "\",\"地址\":[\"" << province << "\",\"" << city << "\",\"" << county << "\",\"" << town << "\",\"" << da1<< "\",\""  << da2 << "\",\"" << da3 << "\"]}";
+		json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + da1 + "\",\""+da2 + "\",\""+ da3 + "\"]}";
+		file2 << way.G2U(json.c_str());
 		file2.close();
 	}
-
-}
+}//GB2312toUTF-8
 
 void Information::GetLevel()
 {

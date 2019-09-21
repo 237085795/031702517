@@ -21,15 +21,21 @@
     <ClInclude Include="Information.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Transcode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="addressbook.cpp">
+    <ClCompile Include="Information.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Information.cpp">
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Transcode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,5 +46,8 @@
     <Text Include="2.txt">
       <Filter>源文件</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
