@@ -38,13 +38,13 @@ Information::~Information()
 //	}
 //
 //}//GB2312
-void Information::Output()
+void Information::Output(string outfilename)
 {
 	Transcode way;
 	string json;
 	if (level == "1") {
 		ofstream file2;
-		file2.open("2.txt", ios::app);
+		file2.open(outfilename, ios::app);
 		json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + detailedaddress + "\"]}";
 		file2 << way.G2U(json.c_str());	
 		file2.close();
@@ -52,7 +52,7 @@ void Information::Output()
 	/*if (level == "2") */
 	else {
 		ofstream file2;
-		file2.open("2.txt", ios::app);
+		file2.open(outfilename, ios::app);
 		json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + da1 + "\",\""+da2 + "\",\""+ da3 + "\"]}";
 		file2 << way.G2U(json.c_str());
 		file2.close();
@@ -139,7 +139,7 @@ void Information::SevenDivision()
 		province = "重庆";
 }
 
-void Information::Solution()
+void Information::Solution(string outfilename)
 {
 	GetLevel();
 	GetName();
@@ -150,5 +150,5 @@ void Information::Solution()
 		SevenDivision();
 	if(level=="3")
 		SevenDivision();
-	Output();
+	Output(outfilename);
 }

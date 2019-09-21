@@ -21,12 +21,12 @@ public:
 	string da3;
 	string level;
 	//void Input();
-	void Output();
+	void Output(string outfilename);
 	void GetLevel();
 	void GetName();
 	void GetPhone();
 	void FiveDivision();
 	void SevenDivision();
-	void Solution();
+	void Solution(string outfilename);
 };
 
