@@ -15,13 +15,14 @@ int main()
 	Information ifo[100];
 	string line;
 	vector<string> word;
-	ifstream file1;
+	ifstream file1;//<文件读入>
 	file1.open("1.txt");
 	while (getline(file1, line)) {
-		word.push_back(line);//向vector<string> word塞入line	
+		string line_ = way.U2G(line.c_str());//UTF-8toGB2312
+		word.push_back(line_);//向vector<string> word塞入line_
 	}
-	file1.close();
-	ofstream file2;
+	file1.close();//<文件读入>
+	ofstream file2;//<json手动格式化输出>
 	file2.open("2.txt", ios::app);
 	file2 << way.G2U("[");
 	file2.close();
@@ -38,7 +39,7 @@ int main()
 	}
 	file2.open("2.txt", ios::app);
 	file2 << way.G2U("]")<<endl;
-	file2.close();
+	file2.close();//<json手动格式化输出>
 	return 0;
 }
 
