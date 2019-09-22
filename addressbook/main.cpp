@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc,char *argv[])
 {	
 	Transcode way;
-	Information ifo[100];
+	Information ifo[2000];
 	string line;
 	vector<string> word;
 	ifstream file1;//<ÎÄ¼þ¶ÁÈë>

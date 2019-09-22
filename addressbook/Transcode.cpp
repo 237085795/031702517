@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Transcode.h"
 #include<Windows.h>
+using namespace std;
 
 Transcode::Transcode()
 {

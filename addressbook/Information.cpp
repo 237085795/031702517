@@ -45,7 +45,8 @@ void Information::Output(string outfilename)
 	if (level == "1") {
 		ofstream file2;
 		file2.open(outfilename, ios::app);
-		json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + detailedaddress + "\"]}";
+		//json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + detailedaddress + "\"]}";
+		json =  "{\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + detailedaddress + "\"],\"手机\":\"" + phone +"\",\"姓名\":\"" + name +  "\"}";
 		file2 << way.G2U(json.c_str());	
 		file2.close();
 	}
@@ -53,7 +54,8 @@ void Information::Output(string outfilename)
 	else {
 		ofstream file2;
 		file2.open(outfilename, ios::app);
-		json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + da1 + "\",\""+da2 + "\",\""+ da3 + "\"]}";
+		//json = "{\"姓名\":\"" + name + "\",\"手机\":\"" + phone + "\",\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + da1 + "\",\""+da2 + "\",\""+ da3 + "\"]}";
+		json = "{\"地址\":[\"" + province + "\",\"" + city + "\",\"" + county + "\",\"" + town + "\",\"" + da1 + "\",\"" + da2 + "\",\"" + da3 +"\"],\"手机\":\"" + phone + "\",\"姓名\":\"" + name + "\"}";
 		file2 << way.G2U(json.c_str());
 		file2.close();
 	}
